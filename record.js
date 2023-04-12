@@ -1,6 +1,6 @@
 // Day 1
 
-// Roman Numerals Decoder - Medium
+// Roman Numerals Decoder - M
 // Create a function that takes a Roman numeral as its argument and returns its value as a numeric decimal integer. You don't need to validate the form of the Roman numeral.
 // Modern Roman numerals are written by expressing each decimal digit of the number to be encoded separately, starting with the leftmost digit and skipping any 0s. So 1990 is rendered "MCMXC" (1000 = M, 900 = CM, 90 = XC) and 2008 is rendered "MMVIII" (2000 = MM, 8 = VIII). The Roman numeral for 1666, "MDCLXVI", uses each letter in descending order.
 // Example: solution('XXI'); // should return 21
@@ -87,9 +87,46 @@ const convertToRoman = (num) => {
 console.log(convertToRoman(2023));
 console.log(convertToRoman(1666));
 
-//Function 1 - hello world - Easy
+//Function 1 - hello world - E
 //DESCRIPTION:
 //Make a simple function called greet that returns the most-famous "hello world!".
 const greet = () => {
   return 'hello world';
 };
+
+// Day 2
+
+//Count by X - E
+// DESCRIPTION:
+// Create a function with two arguments that will return an array of the first n multiples of x.
+// Assume both the given number and the number of times to count will be positive numbers greater than 0.
+// Return the results as an array or list ( depending on language ).
+// Examples
+// countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
+// countBy(2,5) === [2,4,6,8,10]
+function countBy(x, n) {
+  var z = [];
+  for (i = 1; i <= n; i++) {
+    z.push(x * i);
+  }
+  return z;
+}
+console.log(countBy(1, 10));
+console.log(countBy(2, 5));
+
+//Convert a Boolean to a String - E
+//Implement a function which convert the given boolean value into its string representation.
+//Note: Only valid inputs will be given.
+function booleanToString(b) {
+  //your code here
+  return b.toString();
+}
+
+//Valid Phone Number - E
+// Write a function that accepts a string, and returns true if it is in the form of a phone number.
+// Assume that any integer from 0-9 in any of the spots will produce a valid phone number.
+// Only worry about the following format:
+// (123) 456-7890 (don't forget the space after the close parentheses)
+function validPhoneNumber(phoneNumber) {
+  return phoneNumber.match(/^\(\d{3}\)\s{1}\d{3}\-{1}\d{4}$/g) ? true : false;
+}

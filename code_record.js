@@ -169,3 +169,47 @@ function solution(number) {
   }
   return sum;
 }
+
+// Day 4
+
+// The Hashtag Generator - M
+// The marketing team is spending way too much time typing in hashtags.
+// Let's help them with our own Hashtag Generator!
+// Here's the deal:
+// It must start with a hashtag (#).
+// All words must have their first letter capitalized.
+// If the final result is longer than 140 chars it must return false.
+// If the input or the result is an empty string it must return false.
+function generateHashtag(str) {
+  // empty string return false
+  if (str.trim().length === 0) {
+    return false;
+  }
+  // check string and remove extra spaces between the sentense, then split into array
+  let word = str.replace(/\s+/g, ' ').trim().split(' ');
+  // map over the array and capitalize the first letter of each word
+  let newArr = word.map((e) => e[0].toUpperCase() + e.substring(1));
+  // check if the final result is longer than 140 chars
+  if (newArr.join('').length > 139) {
+    return false;
+  } else {
+    return '#' + newArr.join('');
+  }
+}
+console.log(generateHashtag(' Do  we  have A  Hashtag'));
+console.log(generateHashtag('code' + ' '.repeat(100) + 'wars'));
+console.log(generateHashtag('Why do we have eat       like this'));
+console.log(generateHashtag('a'));
+console.log(generateHashtag('Why coding is so hard'));
+console.log(generateHashtag('a'.repeat(140)));
+
+// DNA to RNA Conversion - E
+// Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems. It is composed of four nucleic acid bases Guanine ('G'), Cytosine ('C'), Adenine ('A'), and Thymine ('T').
+// Ribonucleic acid, RNA, is the primary messenger molecule in cells. RNA differs slightly from DNA its chemical structure and contains no Thymine. In RNA Thymine is replaced by another nucleic acid Uracil ('U').
+// Create a function which translates a given DNA string into RNA.
+function DNAtoRNA(dna) {
+  return dna.replace(/T/g, 'U');
+}
+console.log(DNAtoRNA('TTTT'));
+console.log(DNAtoRNA('GCAT'));
+console.log(DNAtoRNA('GACCGCCGCC'));

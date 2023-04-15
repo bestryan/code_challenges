@@ -1,10 +1,14 @@
 console.log('100 day coding challenge');
 
-function DNAtoRNA(dna) {
-  // create a function which returns an RNA sequence from the given DNA sequence
-  return dna.replace(/T/g, 'U');
+function solution(str, ending) {
+  // TODO: complete
+  for (let i = ending.length; i > 0; i--) {
+    if (str[str.length - i] === ending[ending.length - i]) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
-console.log(DNAtoRNA('TTTT'));
-console.log(DNAtoRNA('GCAT'));
-console.log(DNAtoRNA('GACCGCCGCC'));
+console.log(solution('abaaacde', 'cde'));

@@ -294,3 +294,60 @@ function score(dice) {
   }, 0);
 }
  */
+
+// Day 6 16/Apr/23 - E
+/**
+String ends with?
+Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+Examples:
+solution('abc', 'bc') // returns true
+solution('abc', 'd') // returns false
+*/
+function solution(str, ending) {
+  return str.endsWith(ending);
+}
+
+// Sum Strings as Numbers - H 4kyu
+// Given the string representations of two integers, return the string representation of the sum of those integers.
+// For example:
+// sumStrings('1','2') // => '3'
+// A string representation of an integer will contain no characters besides the ten numerals "0" to "9".
+// I have removed the use of BigInteger and BigDecimal in java
+// Python: your solution need to work with huge numbers (about a milion digits), converting to int will not work.
+function sumStrings(a, b) {
+  let sum = BigInt(Number(a)) + BigInt(Number(b));
+  return sum.toString();
+  // this does not work big numbers
+}
+console.log(
+  sumStrings('712569312664357328695151392', '8100824045303269669937')
+);
+
+// Day 7 17/Apr/23
+/** Replace With Alphabet Position - M 6kyu
+DESCRIPTION:
+Welcome.
+In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+If anything in the text isn't a letter, ignore it and don't return it.
+"a" = 1, "b" = 2, etc.
+Example
+alphabetPosition("The sunset sets at twelve o' clock.")
+Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" ( as a string ) */
+
+function alphabetPosition(text) {
+  const char = 'abcdefghijklmnopqrstuvwxyz';
+  let num = [];
+  text = text.toLowerCase();
+
+  for (let i = 0; i < text.length; i++) {
+    let index = char.indexOf(text[i]);
+
+    if (index === -1) {
+      continue;
+    } else {
+      num.push(index + 1);
+    }
+  }
+  return num.join(' ');
+}
+console.log(alphabetPosition("The sunset sets at twelve o' clock."));

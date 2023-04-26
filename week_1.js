@@ -1,6 +1,6 @@
 // Day 1
 
-/** Roman Numerals Decoder - M
+/** Roman Numerals Decoder
 Create a function that takes a Roman numeral as its argument and returns its value as a numeric decimal integer. You don't need to validate the form of the Roman numeral.
 Modern Roman numerals are written by expressing each decimal digit of the number to be encoded separately, starting with the leftmost digit and skipping any 0s. So 1990 is rendered "MCMXC" (1000 = M, 900 = CM, 90 = XC) and 2008 is rendered "MMVIII" (2000 = MM, 8 = VIII). The Roman numeral for 1666, "MDCLXVI", uses each letter in descending order.
 Example: solution('XXI'); // should return 21 */
@@ -72,7 +72,7 @@ const convertToRoman = (num) => {
     I: 1,
   };
   let romanNum = '';
-  for (var key in romantoNum) {
+  for (let key in romantoNum) {
     //key value pair
     //console.log(key);
     //console.log(romantoNum[key]);
@@ -87,7 +87,7 @@ const convertToRoman = (num) => {
 console.log(convertToRoman(2023));
 console.log(convertToRoman(1666));
 
-/** Function 1 - hello world - E
+/** Function 1 - hello world
 DESCRIPTION:
 Make a simple function called greet that returns the most-famous "hello world!". */
 const greet = () => {
@@ -115,7 +115,7 @@ function countBy(x, n) {
 console.log(countBy(1, 10));
 console.log(countBy(2, 5));
 
-/** Convert a Boolean to a String - E
+/** Convert a Boolean to a String
 Implement a function which convert the given boolean value into its string representation.
 Note: Only valid inputs will be given. */
 function booleanToString(b) {
@@ -123,7 +123,7 @@ function booleanToString(b) {
   return b.toString();
 }
 
-/** Valid Phone Number - E
+/** Valid Phone Number
 Write a function that accepts a string, and returns true if it is in the form of a phone number.
 Assume that any integer from 0-9 in any of the spots will produce a valid phone number.
 Only worry about the following format:
@@ -135,7 +135,7 @@ function validPhoneNumber(phoneNumber) {
 
 // Day 3
 
-/** Take a Ten Minutes Walk - E
+/** Take a Ten Minutes Walk
 You live in the city of Cartesia where all roads are laid out in a perfect grid. You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go for a short walk. The city provides its citizens with a Walk Generating App on their phones -- everytime you press the button it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). You always walk only a single block for each letter (direction) and you know it takes you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise.
 Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!). */
 function isValidWalk(walk) {
@@ -152,7 +152,7 @@ function isValidWalk(walk) {
       ew -= 1;
     }
   }
-  if (walk.length === 10 && (ns === 0) & (ew === 0)) {
+  if (walk.length === 10 && ns === 0 && ew === 0) {
     return true;
   } else {
     return false;
@@ -176,7 +176,7 @@ function solution(number) {
 // Day 4
 
 /**
-The Hashtag Generator - M
+The Hashtag Generator
 The marketing team is spending way too much time typing in hashtags.
 Let's help them with our own Hashtag Generator!
 Here's the deal:
@@ -209,7 +209,7 @@ console.log(generateHashtag('a'));
 console.log(generateHashtag('Why coding is so hard'));
 console.log(generateHashtag('a'.repeat(140)));
 
-/** DNA to RNA Conversion - E
+/** DNA to RNA Conversion
 Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems. It is composed of four nucleic acid bases Guanine ('G'), Cytosine ('C'), Adenine ('A'), and Thymine ('T').
 Ribonucleic acid, RNA, is the primary messenger molecule in cells. RNA differs slightly from DNA its chemical structure and contains no Thymine. In RNA Thymine is replaced by another nucleic acid Uracil ('U').
 Create a function which translates a given DNA string into RNA. */
@@ -295,7 +295,7 @@ function score(dice) {
 }
  */
 
-// Day 6 16/Apr/23 - E
+// Day 6 15/Apr/23
 /**
 String ends with?
 Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
@@ -307,7 +307,7 @@ function solution(str, ending) {
   return str.endsWith(ending);
 }
 
-// Sum Strings as Numbers - H 4kyu
+// Sum Strings as Numbers
 // Given the string representations of two integers, return the string representation of the sum of those integers.
 // For example:
 // sumStrings('1','2') // => '3'
@@ -323,8 +323,8 @@ console.log(
   sumStrings('712569312664357328695151392', '8100824045303269669937')
 );
 
-// Day 7 17/Apr/23
-/** Replace With Alphabet Position - M 6kyu
+// Day 7 16/Apr/23
+/** Replace With Alphabet Position
 DESCRIPTION:
 Welcome.
 In this kata you are required to, given a string, replace every letter with its position in the alphabet.

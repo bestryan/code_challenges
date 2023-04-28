@@ -1,2 +1,2 @@
 # code_challenges
-100 day code challenges - JavaScript Practice
+daily code challenges - JavaScript Practice

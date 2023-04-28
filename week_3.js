@@ -51,6 +51,11 @@ var isAnagram = function (s, t) {
   let strS = s.split('').sort();
   let strT = t.split('').sort();
 
+  // check the length of 2 strings
+  if (s.length !== t.length) {
+    return false;
+  }
+
   for (let i = 0; i < strS.length; i++) {
     if (strS[i] !== strT[i]) {
       return false;
@@ -62,6 +67,52 @@ console.log(isAnagram('rat', 'car'));
 console.log(isAnagram('anagram', 'nagaram'));
 
 // Day 18 27/Apr/23
+// Longest Palindrome
+var longestPalindrome = function (s) {
+  let answer = 0;
+  let check = {}; // set empty object to store hashmap
+
+  for (let char of s) {
+    check[char] = (check[char] || 0) + 1;
+    if (check[char] % 2 === 0) answer += 2;
+  }
+
+  return s.length > answer ? answer + 1 : answer;
+};
+
+console.log(longestPalindrome('abccccdde'));
+console.log(longestPalindrome('cccedd'));
+
 // Day 19 28/Apr/23
+
+// Invert Binary Tree
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+// Time complexity: O(n)
+// Space complexity: O(n)
+// n is the number of nodes
+var invertTree = function (root) {
+  if (root === null) return null;
+  let temVar = root.right;
+  root.right = root.left;
+  root.left = temVar;
+  // recursive method to invert next node
+  invertTree(root.right);
+  invertTree(root.left);
+
+  return root;
+};
+
 // Day 20 29/Apr/23
 // Day 21 30/Apr/23

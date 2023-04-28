@@ -1,20 +1,4 @@
-let hashMap = new Map();
-hashMap.set(1, 100);
-hashMap.set(2, 'rice');
-hashMap.set(3, true);
-hashMap.set(4, false);
-hashMap.set('orange', 26);
-hashMap.set(1, 'apple');
-//console.log(hashMap);
-// hashMap.key() hashMap.value()
-// for (e of hashMap) {
-//   console.log(e);
-// }
-// delete key
-hashMap.delete('orange');
-hashMap.clear();
-console.log(hashMap);
-
+// Valid Parentheses
 var isValid = function (s) {
   const map = { '(': ')', '{': '}', '[': ']' };
   let stack = [];

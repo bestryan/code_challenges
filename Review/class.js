@@ -104,3 +104,79 @@ console.log(SquareS.equals(squareOne, squareTwo));
 console.log(SquareS.isValidDiemnsions(squareOne, squareTwo));
 
 // Inheritance & Extends
+
+// Parent and Child Class
+
+class Person {
+  constructor(_name, _age) {
+    this.name = _name;
+    this.age = _age;
+  }
+
+  describe() {
+    return `I am ${this.name} and ${this.age} years old`;
+  }
+}
+
+class Programmer extends Person {
+  constructor(_name, _age, _yearsOfExperience) {
+    super(_name, _age);
+
+    // Custom behaviour
+    this._yearsOfExperience = _yearsOfExperience;
+  }
+
+  code() {
+    return `${this.name} is coding`;
+  }
+}
+
+const programmers = [
+  new Programmer('Alex', 40, 5),
+  new Programmer('Ryan', 30, 2),
+];
+
+// let person1 = new Person('Ryan', 30);
+// let programmer1 = new Programmer('Alex', 40, 5);
+
+// console.log(person1);
+// console.log(programmer1);
+
+function developSoftware(programmers) {
+  // Develop software
+  for (let programmer of programmers) {
+    return programmer.code();
+  }
+  // return programmers.map((e) => e.code());
+}
+
+console.log(developSoftware(programmers));
+
+// Polymorphism
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  makeSound() {
+    return `Generic Animal Sounds!`;
+  }
+}
+
+class Dog extends Animal {
+  constructor(name) {
+    super(name);
+  }
+
+  makeSound() {
+    // super.makeSound();
+    return 'woof! woof!';
+  }
+}
+
+const a1 = new Animal('Dom');
+const a2 = new Dog('Jeff');
+
+console.log(a1.makeSound());
+console.log(a2.makeSound());

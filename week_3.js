@@ -115,4 +115,57 @@ var invertTree = function (root) {
 };
 
 // Day 20 29/Apr/23
+
+// 110. Balanced Binary Tree
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+var isBalanced = function (root) {
+  let result = true;
+
+  let maxDepth = (node) => {
+    if (!node) return 0;
+    let left = maxDepth(node.left);
+    let right = maxDepth(node.right);
+    if (Math.abs(left - right) > 1) result = false;
+    return 1 + Math.max(left, right);
+  };
+
+  maxDepth(root);
+  return result;
+};
+
+// 11. Container With Most Water
+
+var maxArea = function (height) {
+  let left = 0;
+  let right = height.length - 1;
+  let maxArea = 0;
+
+  while (left < right) {
+    let currMinHeight = Math.min(height[left], height[right]);
+    let currWidth = right - left;
+    maxArea = Math.max(maxArea, currMinHeight * currWidth);
+    if (height[left] > height[right]) {
+      right--;
+    } else {
+      left++;
+    }
+  }
+  return maxArea;
+};
+
+console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
+console.log(maxArea([1, 1]));
+
 // Day 21 30/Apr/23

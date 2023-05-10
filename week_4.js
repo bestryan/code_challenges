@@ -104,7 +104,7 @@ var removeElement = function (nums, val) {
 console.log(removeElement([3, 2, 2, 3], 3));
 console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
 
-// Day 26 6/May/23
+// Day 27 6/May/23
 
 // 28. Find the Index of the First Occurrence in a String
 
@@ -120,3 +120,23 @@ console.log(strStr('sadbutsad', 'sad'));
 console.log(strStr('leetcode', 'leeto'));
 
 // Day 28 7/May/23
+
+// 35. Search Insert Position
+
+var searchInsert = function (nums, target) {
+  let index = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === target) {
+      return nums.indexOf(target);
+    }
+
+    if (nums[i] < target) {
+      ++index;
+    }
+  }
+  return index;
+};
+
+console.log(searchInsert([1, 3, 5, 6], 6));
+console.log(searchInsert([1, 3, 5, 6], 2));
+console.log(searchInsert([1, 3, 5, 6], 7));
